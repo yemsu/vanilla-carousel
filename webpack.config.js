@@ -21,7 +21,25 @@ module.exports = {
             presets: ['@babel/preset-env'],
           }
         },
-      }
+      },
+      {
+        test: /\.s?css$/, 
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+            }
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            }
+          }
+        ]
+      },
     ],
   },
   plugins: [
@@ -31,7 +49,7 @@ module.exports = {
   ],
   devServer: {
     hot: true,
-    port: 6000
+    port: 7000
   },
   devtool: 'source-map',
   mode: 'development'
