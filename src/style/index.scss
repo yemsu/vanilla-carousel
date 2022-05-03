@@ -1,0 +1,108 @@
+// reset
+* {
+  margin: 0;
+  padding: 0;
+}
+ul, li {
+  list-style: none;
+}
+button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+// common
+.ir-hidden {
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+}
+.icon-arrow {
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #333;
+  border-right: 1px solid #333;
+  &.prev {
+    transform: translateX(4px) rotate(-135deg);
+  }
+  &.next {
+    transform: translateX(-4px) rotate(45deg);
+  }
+}
+
+// carousel 
+// for Demo
+h1, h2 {
+  margin: 40px 20px 20px;
+}
+.carousel {
+  position: relative;
+  .viewport {
+    border: 1px solid #eee;
+  }
+}
+
+// layout
+.carousel {
+  width: 50%;
+  margin: 0 auto;
+  .viewport {
+    overflow: hidden;
+    height: 200px;
+    .area-sliding {
+      display: flex;
+      height: 100%;
+      transition: 0.3s transform;
+      .slide {
+        flex: 1;
+      }
+    }
+  }
+}
+
+// arrow
+.arrows {
+  .arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    &.prev {
+      left: 10px;
+    }
+    &.next {
+      right: 10px;
+    }
+    button {
+      height: 20px;
+    }
+  }
+}
+// indicator
+.indicators {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  width: 100%;
+  bottom: 15px;
+  .indicator {
+    &:nth-child(n+2) {
+      margin-left: 10px;
+    }
+    button {
+      width: 8px;
+      height: 8px;
+      border: 1px solid #333;
+      border-radius: 100%;
+    }
+    &.active {
+      button {
+        background: #333;
+      }
+    }
+  }
+}
